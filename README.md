@@ -31,7 +31,7 @@ It is especially useful for detailed inpainting workflows where different parts 
 
 InpaintLab is made for users who like to fine-tune an image until the result feels right.
 
-Instead of generating a batch of variations, opening them all in browser tabs, comparing them one by one, losing track of the good ones, and slowly becoming a tiny exhausted PNG detective, InpaintLab keeps the comparison process inside one workspace.
+Instead of generating a batch of variations, opening them all in browser tabs, comparing them one by one, losing track of the good ones, and slowly becoming more and more mentally exhausted, InpaintLab keeps the comparison process inside one workspace.
 
 You can generate up to 8 candidates at once, scroll through them easily, preview the masked area more closely, delete unwanted results, and keep only the variations worth comparing.
 
