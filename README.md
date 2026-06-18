@@ -27,6 +27,20 @@ It is especially useful for detailed inpainting workflows where different parts 
 
 ---
 
+## Built for Perfectionist Workflows
+
+InpaintLab is made for users who like to fine-tune an image until the result feels right.
+
+Instead of generating a batch of variations, opening them all in browser tabs, comparing them one by one, losing track of the good ones, and slowly becoming a tiny exhausted PNG detective, InpaintLab keeps the comparison process inside one workspace.
+
+You can generate up to 8 candidates at once, scroll through them easily, preview the masked area more closely, delete unwanted results, and keep only the variations worth comparing.
+
+For smaller or harder-to-see edits, the **Crop Preview** button lets you zoom in on the masked subject so you can judge the actual inpainted area instead of squinting at the full image.
+
+This makes InpaintLab especially useful for picky or detail-focused workflows where the first result is rarely the final result.
+
+---
+
 ## Requirements
 
 Before launching InpaintLab, you need one of these running in the background:
