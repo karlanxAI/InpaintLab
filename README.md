@@ -1,10 +1,10 @@
 # InpaintLab
 
-**InpaintLab** is a standalone AI inpainting workflow studio for Stable Diffusion users who want a faster, more visual way to edit images with multiple masks, prompts, candidates, and cleanup tools.
+**InpaintLab** is a standalone inpainting workflow tool for Stable Diffusion users who want a faster and more visual way to edit images.
 
 It is designed to work alongside **Forge**, **Forge Neo**, and **Stable Diffusion WebUI / Automatic1111-compatible backends**.
 
-InpaintLab does not replace your Stable Diffusion backend. Instead, it connects to your running WebUI through the API and gives you a dedicated workspace for multi-mask inpainting, candidate selection, autotagging, AI object removal, and final image merging.
+InpaintLab does not replace your Stable Diffusion backend. Instead, it connects to your running WebUI through the API and gives you a dedicated workspace for multi-mask inpainting, candidate generation, comparison, autotagging, AI object removal, and final image merging.
 
 ---
 
@@ -12,18 +12,21 @@ InpaintLab does not replace your Stable Diffusion backend. Instead, it connects 
 
 InpaintLab is built for workflows where one image needs multiple targeted edits.
 
-Instead of repeatedly jumping back and forth between masks, prompts and settings, InpaintLab lets you:
+Instead of constantly switching between masks, prompts, settings, folders, and browser tabs, InpaintLab keeps the whole process in one place.
+
+With InpaintLab, you can:
 
 * Load one base image
 * Draw multiple coloured masks
-* Use autotagging and AI removal tools to speed up the process
 * Give each mask its own prompt and settings
 * Generate candidates for each masked area
-* Remove and compare the results visually
-* Pick the best candidate for each mask
+* Compare results inside the app
+* Delete unwanted candidates
+* Pick the best result for each mask
 * Merge everything into one final image
+* Use autotagging and AI removal tools to speed up the workflow
 
-It is especially useful for detailed inpainting workflows where different parts of an image need different prompts or different generation settings.
+It is especially useful when different parts of an image need different prompts, denoise values, crop settings, or levels of detail.
 
 ---
 
@@ -31,19 +34,21 @@ It is especially useful for detailed inpainting workflows where different parts 
 
 InpaintLab is made for users who like to fine-tune an image until the result feels right.
 
-Instead of generating a batch of variations, opening them all in browser tabs, comparing them one by one, losing track of the good ones, and slowly becoming more and more mentally exhausted, InpaintLab keeps the comparison process inside one workspace.
+If you often generate several variations, compare them carefully, reject the weaker ones, and keep tweaking until you find the best result, InpaintLab is designed around that workflow.
 
-You can generate up to 8 candidates at once, scroll through them easily, preview the masked area more closely, delete unwanted results, and keep only the variations worth comparing.
+Instead of opening multiple images in separate browser tabs or digging through output folders, you can generate up to 8 candidates at once and compare them directly inside the app.
+
+You can scroll through candidates, preview the masked area more closely, delete unwanted results, and keep only the variations that are worth comparing.
 
 For smaller or harder-to-see edits, the **Crop Preview** button lets you zoom in on the masked subject so you can judge the actual inpainted area instead of squinting at the full image.
 
-This makes InpaintLab especially useful for picky or detail-focused workflows where the first result is rarely the final result.
+This makes InpaintLab useful for detailed editing workflows where the first result is rarely the final result.
 
 ---
 
 ## Requirements
 
-Before launching InpaintLab, you need one of these running in the background:
+Before launching InpaintLab, you need one of the following running in the background:
 
 * Forge
 * Forge Neo
@@ -82,13 +87,15 @@ Create and manage multiple masks on one image.
 * Generate all selected masks in sequence
 * Clear, edit, or replace masks as needed
 
-Each mask can have its own workflow instead of forcing the whole image through one prompt.
+Each mask can have its own workflow instead of forcing the entire image through one prompt or one set of settings.
 
 ---
 
 ### Per-Mask Prompts and Settings
 
-Each mask can use its own settings, including:
+Each mask can use its own prompt and generation settings.
+
+Per-mask controls include:
 
 * Prompt
 * Negative prompt
@@ -97,9 +104,9 @@ Each mask can use its own settings, including:
 * Padding
 * Batch size
 * Crop/detail settings
-* Candidate count / generation workflow
+* Candidate generation controls
 
-This allows one mask to be subtle and another to be much stronger without constantly changing your global Stable Diffusion settings.
+This allows one mask to use a subtle edit while another can use stronger settings, without constantly changing your global Stable Diffusion setup.
 
 ---
 
@@ -107,17 +114,17 @@ This allows one mask to be subtle and another to be much stronger without consta
 
 InpaintLab is built around candidate-based editing.
 
-For each mask, you can generate multiple options, then choose the one that looks best.
+For each mask, you can generate multiple options, compare them, and choose the one that looks best.
 
 * Generate multiple candidates per mask
 * Preview candidates inside the app
 * Compare results quickly
-* Delete bad candidates
-* Keep the best ones
+* Delete unwanted candidates
+* Keep the best results
 * Select a final candidate for each mask
 * Merge selected candidates into one finished image
 
-This makes inpainting feel more like picking the best result from a controlled mini-gallery instead of digging through folders like a tired little file goblin.
+This makes inpainting feel more like choosing from a controlled set of results, instead of manually searching through output folders.
 
 ---
 
@@ -125,7 +132,7 @@ This makes inpainting feel more like picking the best result from a controlled m
 
 After choosing your favourite candidate for each mask, InpaintLab can merge them back into a final image.
 
-This lets you build up a complete edit piece by piece:
+A typical workflow looks like this:
 
 1. Generate candidates for mask 1
 2. Pick the best result
@@ -133,6 +140,8 @@ This lets you build up a complete edit piece by piece:
 4. Pick the best result
 5. Continue through your enabled masks
 6. Merge everything into one final image
+
+This lets you build up a finished edit piece by piece while keeping control over each area.
 
 ---
 
@@ -147,7 +156,7 @@ Useful for:
 * Filling in areas without writing a full prompt
 * Quick background or object cleanup
 
-The removal tool is designed as a fast alternative when you just want something gone without building a full inpainting prompt.
+The removal tool is designed for situations where you just want something removed quickly without building a full inpainting prompt.
 
 ---
 
@@ -160,7 +169,7 @@ There are two autotagging options:
 1. **Default autotagger**
 2. **WD14 autotagger**
 
-The default autotagger is the main option, while WD14 is available as an additional/secondary tagging option.
+The default autotagger is the main option, while WD14 is available as an additional option for users who prefer that tagging style.
 
 Autotagging features include:
 
@@ -238,12 +247,22 @@ Features include:
 * Mask colour visibility
 * Better workspace for detailed selections
 
-Useful shortcuts may include:
+### Canvas Controls and Hotkeys
 
-* Fullscreen toggle
-* Brush size adjustment
-* Eraser mode
-* Delete / clear mask actions
+InpaintLab includes canvas shortcuts to make mask editing faster and smoother.
+
+| Control                | Action                                               |
+| ---------------------- | ---------------------------------------------------- |
+| **F**                  | Toggle fullscreen canvas mode                        |
+| **Right-click + drag** | Pan / move around the canvas                         |
+| **Right-click canvas** | Focus/select the canvas without painting a mask      |
+| **Mouse wheel**        | Zoom in and out on the canvas                        |
+| **W + mouse wheel**    | Increase or decrease brush size                      |
+| **Hold Shift**         | Temporarily switch to eraser mode                    |
+| **Ctrl + X**           | Clear / delete all masks                             |
+| **Arrow keys**         | Navigate through candidates/previews where supported |
+
+These shortcuts are designed so you can zoom, pan, erase, resize the brush, and manage masks without constantly leaving the canvas.
 
 ---
 
@@ -281,7 +300,7 @@ Tutorial mode is designed to explain the app step by step, including:
 * Using autotagging
 * Using removal tools
 
-This makes the tool easier to understand even for users who are new to multi-mask inpainting.
+This makes the tool easier to understand for users who are new to multi-mask inpainting.
 
 ---
 
@@ -361,6 +380,7 @@ Planned or possible future improvements include:
 * More inpainting workflow tools
 * Quality-of-life improvements for candidate management
 * More advanced mask controls
+* **Simple Inpaint Mode**: a cleaner single-mask workspace for users who want a simpler workflow similar to normal Forge / Forge Neo img2img inpainting, with the extra mask panels and prompt boxes hidden
 
 ---
 
