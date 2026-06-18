@@ -12,16 +12,16 @@ InpaintLab does not replace your Stable Diffusion backend. Instead, it connects 
 
 InpaintLab is built for workflows where one image needs multiple targeted edits.
 
-Instead of repeatedly jumping back and forth between masks, prompts, folders, and previews, InpaintLab lets you:
+Instead of repeatedly jumping back and forth between masks, prompts and settings, InpaintLab lets you:
 
 * Load one base image
 * Draw multiple coloured masks
+* Use autotagging and AI removal tools to speed up the process
 * Give each mask its own prompt and settings
 * Generate candidates for each masked area
-* Compare the results visually
+* Remove and compare the results visually
 * Pick the best candidate for each mask
 * Merge everything into one final image
-* Use autotagging and AI removal tools to speed up the process
 
 It is especially useful for detailed inpainting workflows where different parts of an image need different prompts or different generation settings.
 
